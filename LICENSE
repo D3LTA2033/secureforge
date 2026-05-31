@@ -1,0 +1,274 @@
+SECUREFORGE PUBLIC LICENSE
+Version 1.0 — 2026
+
+Copyright (c) 2026 SecureForge Contributors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PREAMBLE
+
+SecureForge is a system hardening tool built to help individuals and
+organizations protect their Linux systems. This license is designed to keep the
+software free and open, encourage responsible security research, and explicitly
+prohibit use of this software as a weapon against others.
+
+Security tools are inherently dual-use. This license draws a clear line: you
+may use SecureForge to defend systems you own or have explicit written
+authorization to protect. You may not use it, or derivatives of it, to attack,
+surveil, or harm others.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 1 — DEFINITIONS
+
+"Software" refers to SecureForge, including all source code, scripts,
+configuration files, documentation, and associated materials distributed under
+this license.
+
+"You" refers to any individual, organization, or entity exercising rights
+granted by this license.
+
+"Authorized System" means a computer system, server, or device that you own
+outright, or for which you hold current, explicit written authorization from the
+legal owner to perform security configuration and hardening.
+
+"Derivative Work" means any work that is based on, incorporates, or is derived
+from the Software, including modifications, translations, ports, and integrations.
+
+"Contributor" means any individual or entity that submits code, documentation,
+or other material to the Software.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 2 — GRANT OF RIGHTS
+
+Subject to the terms and conditions of this license, you are hereby granted a
+worldwide, royalty-free, non-exclusive license to:
+
+  (a) USE the Software on Authorized Systems for personal, educational,
+      research, or commercial security hardening purposes;
+
+  (b) COPY and DISTRIBUTE verbatim copies of the Software, provided that you
+      retain all copyright notices, this license, and all disclaimer text;
+
+  (c) MODIFY the Software and create Derivative Works, provided that:
+        i.  Modified files carry prominent notices stating that you changed them
+            and the date of the change;
+       ii.  Any Derivative Work you distribute is licensed under this license
+            or a license with equivalent or stronger ethical use restrictions;
+      iii.  You do not remove, obscure, or alter any Alpha/Beta/Experimental
+            stability warnings present in the Software;
+
+  (d) USE the Software in commercial environments, including managed security
+      services, provided you comply with all other terms of this license;
+
+  (e) STUDY the Software for educational or research purposes, including
+      publication of findings, with appropriate attribution.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 3 — RESTRICTIONS AND PROHIBITED USES
+
+You MAY NOT use the Software, or any Derivative Work thereof, for any of the
+following:
+
+  (a) UNAUTHORIZED ACCESS — Using any feature of the Software (including but
+      not limited to the SSH tarpit, canary files, fake twin login, or network
+      decoy modules) against systems you do not own or do not have explicit
+      written authorization to test or configure;
+
+  (b) OFFENSIVE OPERATIONS — Adapting the Software's deception, monitoring, or
+      interception features to conduct unauthorized surveillance, data
+      exfiltration, man-in-the-middle attacks, or any other offensive security
+      operation against third parties;
+
+  (c) MALWARE DISTRIBUTION — Embedding the Software or any of its components
+      into malware, ransomware, spyware, adware, or any software designed to
+      harm, deceive, or defraud users without their knowledge;
+
+  (d) ILLEGAL ACTIVITY — Using the Software in violation of any applicable
+      local, national, or international law, including but not limited to the
+      Computer Fraud and Abuse Act (CFAA), the EU Network and Information
+      Security Directive, and equivalent legislation in other jurisdictions;
+
+  (e) REMOVING WARNINGS — Stripping, suppressing, or obscuring the Alpha/Beta/
+      Experimental stability warnings, disclaimers, or "run in a VM first"
+      notices from the Software or any Derivative Work intended for distribution;
+
+  (f) FALSE ATTRIBUTION — Claiming authorship or official endorsement of the
+      original SecureForge project for Derivative Works without express written
+      permission from the original authors.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 4 — AUTHORIZED SECURITY RESEARCH
+
+The following activities are explicitly permitted without additional authorization,
+provided they are conducted ethically and legally:
+
+  (a) Penetration testing of systems you own or have written authorization
+      to test, including use of the deception and monitoring modules;
+
+  (b) Security research published in academic papers, conference proceedings,
+      blog posts, or security advisories, with appropriate attribution to
+      the Software;
+
+  (c) CTF (Capture the Flag) competitions and security training labs where
+      participants have implicitly or explicitly consented to adversarial testing;
+
+  (d) Demonstrating the Software's capabilities to clients or stakeholders in
+      the context of a legitimate security engagement on Authorized Systems;
+
+  (e) Contributing improvements, bug reports, or new modules back to the
+      SecureForge project.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 5 — ATTRIBUTION
+
+All distributions of the Software or Derivative Works, whether in source or
+binary form, must include:
+
+  (a) A copy of this license in full;
+
+  (b) The following attribution notice, visible in the software's documentation,
+      help output, or about screen:
+
+        "Based on SecureForge — https://github.com/yourusername/secureforge"
+
+  (c) If the Derivative Work makes significant modifications, a clear notice
+      distinguishing it from the original SecureForge project.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 6 — CONTRIBUTIONS
+
+By submitting a contribution (code, documentation, scripts, or other material)
+to the SecureForge project, you:
+
+  (a) Represent that you have the right to submit the contribution and license
+      it under this license;
+
+  (b) Grant the SecureForge project a perpetual, worldwide, non-exclusive,
+      royalty-free license to use, copy, modify, and distribute your
+      contribution as part of the Software;
+
+  (c) Acknowledge that your contribution may be used in both open-source and
+      commercial contexts in accordance with this license;
+
+  (d) Agree that contributions must not knowingly introduce backdoors,
+      malicious functionality, or deliberately weakened security controls.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 7 — DISCLAIMER OF WARRANTIES
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SECURITY, ACCURACY, AND
+NON-INFRINGEMENT.
+
+THE AUTHORS AND CONTRIBUTORS DO NOT WARRANT THAT:
+
+  (a) The Software will be error-free or uninterrupted;
+  (b) The Software will meet your specific security requirements;
+  (c) The hardening configurations generated by the Software are complete,
+      sufficient, or appropriate for any particular threat model or compliance
+      framework;
+  (d) The Software will not cause system instability, service disruption,
+      or lockouts on your specific hardware and software configuration.
+
+YOU ASSUME ALL RISK ASSOCIATED WITH THE USE OF THIS SOFTWARE, INCLUDING
+THE RISK OF SYSTEM LOCKOUT, DATA LOSS, SERVICE INTERRUPTION, AND SECURITY
+INCIDENTS ARISING FROM MISCONFIGURATION.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 8 — LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+AUTHORS, CONTRIBUTORS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY:
+
+  — Direct, indirect, incidental, special, exemplary, or consequential damages;
+  — Loss of data, revenue, profits, or business opportunities;
+  — System downtime, service outages, or performance degradation;
+  — Security breaches or incidents occurring before, during, or after hardening;
+  — Damage resulting from the Software's Alpha, Beta, or Experimental modules
+    behaving differently than expected on non-default system configurations;
+
+ARISING OUT OF OR IN CONNECTION WITH THE USE OF OR INABILITY TO USE THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+THIS LIMITATION APPLIES REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT,
+STRICT LIABILITY, OR OTHERWISE).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 9 — INDEMNIFICATION
+
+You agree to indemnify, defend, and hold harmless the authors, contributors,
+and copyright holders from and against any claims, damages, losses, liabilities,
+costs, and expenses (including reasonable legal fees) arising from:
+
+  (a) Your use of the Software in violation of this license;
+  (b) Your use of the Software against systems you are not authorized to modify;
+  (c) Any Derivative Work you create, distribute, or deploy;
+  (d) Any claim that your use of the Software caused harm to a third party.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 10 — TERMINATION
+
+Your rights under this license terminate automatically and immediately if you:
+
+  (a) Violate any term of Section 3 (Restrictions and Prohibited Uses);
+  (b) Use the Software against any system without proper authorization;
+  (c) Distribute the Software or a Derivative Work without including this
+      license in full.
+
+Upon termination, you must cease all use and distribution of the Software and
+destroy all copies in your possession or control.
+
+Sections 6 through 9 survive termination of this license.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 11 — GOVERNING LAW AND JURISDICTION
+
+This license shall be governed by and construed in accordance with applicable
+law. Any disputes arising under or in connection with this license shall be
+subject to the exclusive jurisdiction of the courts of the country in which the
+primary author resides, unless otherwise required by applicable law.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 12 — MISCELLANEOUS
+
+  (a) SEVERABILITY — If any provision of this license is held invalid or
+      unenforceable, the remaining provisions shall continue in full force.
+
+  (b) ENTIRE AGREEMENT — This license constitutes the entire agreement between
+      the parties with respect to the Software and supersedes all prior
+      agreements, representations, and understandings.
+
+  (c) NO WAIVER — Failure to enforce any provision of this license shall not
+      constitute a waiver of future enforcement of that provision.
+
+  (d) UPDATES — The authors reserve the right to release new versions of this
+      license. You may choose to use the Software under any version of the
+      SecureForge Public License that has been published. If no version is
+      specified, you may use any version ever published.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+END OF SECUREFORGE PUBLIC LICENSE
+
+To apply this license to your project, include this file as LICENSE in the root
+of your repository and add the following notice to each source file:
+
+    Copyright (c) 2026 SecureForge Contributors
+    Licensed under the SecureForge Public License v1.0
+    See LICENSE for full terms. Use only on systems you own or are
+    authorized to configure. Do not use for unauthorized access.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,25 @@
+{
+  "name": "secureforge",
+  "version": "1.0.0",
+  "description": "Interactive OS hardening wizard for Linux",
+  "main": "index.js",
+  "bin": {
+    "secureforge": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint src/ index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "inquirer": "^9.2.23",
+    "ora": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
