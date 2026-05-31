@@ -55,7 +55,7 @@ Built in pure JavaScript (ESM, Node 18+). No Python, no Ansible, no cloud depend
 
 ```bash
 # Clone and install
-git clone https://github.com/yourusername/secureforge
+git clone https://github.com/D3LTA2033/secureforge
 cd secureforge
 npm install
 
@@ -279,7 +279,7 @@ Installs to `/opt/secureforge`, creates `/usr/local/bin/secureforge`, handles No
 ### Option 2 — Manual
 
 ```bash
-git clone https://github.com/yourusername/secureforge
+git clone https://github.com/D3LTA2033/secureforge
 cd secureforge
 npm install
 sudo node index.js
@@ -288,7 +288,7 @@ sudo node index.js
 ### Option 3 — One-liner (once published)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/secureforge/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/D3LTA2033/secureforge/main/install.sh | sudo bash
 ```
 
 **Requirements:** Node.js 18+, Linux, sudo/root access. `git` and `gcc/make` required for endlessh tarpit module.
