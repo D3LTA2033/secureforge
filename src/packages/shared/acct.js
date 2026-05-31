@@ -105,7 +105,7 @@ ${logHistory ? `
 # Extended command logging via PAM pam_exec
 cat > /usr/local/bin/sf-cmd-log << 'CMDLOG'
 #!/bin/bash
-[ -n "$PAM_USER" ] && logger -t secureforge-pam "LOGIN: user=$PAM_USER type=$PAM_TYPE rhost=${PAM_RHOST:-local}" || true
+[ -n "$PAM_USER" ] && logger -t secureforge-pam "LOGIN: user=$PAM_USER type=$PAM_TYPE rhost=\${PAM_RHOST:-local}" || true
 CMDLOG
 chmod 750 /usr/local/bin/sf-cmd-log
 

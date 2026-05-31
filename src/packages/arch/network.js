@@ -94,7 +94,7 @@ ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ${ipv6 ? `
 GRUB_FILE=/etc/default/grub
 if grep -q 'GRUB_CMDLINE_LINUX=' "$GRUB_FILE"; then
-  sed -i 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="\1 ipv6.disable=1"/' "$GRUB_FILE"
+  sed -i 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="\\1 ipv6.disable=1"/' "$GRUB_FILE"
   grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null || true
 fi
 ` : ''}

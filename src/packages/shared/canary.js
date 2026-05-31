@@ -131,7 +131,7 @@ SRC_IP=$(ss -p 2>/dev/null | awk -v pid="$PID" '$0 ~ "pid="pid {match($0,/[0-9]+
 HOSTNAME=$(hostname)
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
-MSG="[CANARY TRIGGERED] host=$HOSTNAME time=$TIMESTAMP file=$FILE event=$EVENT pid=$PID proc=$PROC user=$USER src_ip=${SRC_IP:-local}"
+MSG="[CANARY TRIGGERED] host=$HOSTNAME time=$TIMESTAMP file=$FILE event=$EVENT pid=$PID proc=$PROC user=$USER src_ip=\${SRC_IP:-local}"
 
 ${logSyslog ? `logger -t secureforge-canary "$MSG"` : ''}
 echo "$MSG" >> /var/log/secureforge-canary.log
@@ -169,7 +169,7 @@ inotifywait -m -r -e access,open,read \\
   "$DIR" 2>/dev/null | while read -r EVENT FILE TIME; do
     # Get the PID of the accessing process via /proc (best-effort)
     PID=$(lsof "$FILE" 2>/dev/null | awk 'NR>1 {print $2}' | head -1)
-    PID=${PID:-0}
+    PID=\${PID:-0}
     /usr/local/bin/sf-canary-alert "$FILE" "$EVENT" "$PID"
 done
 WATCH

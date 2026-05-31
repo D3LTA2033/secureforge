@@ -29,32 +29,44 @@ async function loadModules(distro) {
 async function main() {
   printBanner();
 
-  // Auth check
-  if (!isRoot() && !hasSudo()) {
-    console.log(chalk.red('[x] sudo access is required to run SecureForge.'));
-    process.exit(1);
+  const validDistros = ['arch', 'debian', 'ubuntu', 'fedora', 'opensuse', 'rhel', 'centos', 'gentoo', 'alpine'];
+
+  // --list and --dry-run don't need sudo — resolve distro then bail early
+  if (opts.list || opts.dryRun) {
+    const distro = opts.distro ?? detectDistro() ?? 'arch';
+    if (!validDistros.includes(distro)) {
+      console.log(chalk.red(`[x] Unknown distro: ${distro}. Use: ${validDistros.join(', ')}`));
+      process.exit(1);
+    }
+    const allModules = await loadModules(distro);
+
+    if (opts.list) {
+      console.log(chalk.bold('\nAvailable modules:\n'));
+      for (const m of allModules) {
+        const status = m.defaultEnabled ? chalk.green('on ') : chalk.dim('off');
+        console.log(`  [${status}] ${chalk.bold(m.id.padEnd(18))} ${chalk.dim(m.description)}`);
+      }
+      console.log();
+      process.exit(0);
+    }
+
+    // dry-run: fall through to full flow but skip sudo check
+  } else {
+    // Auth check only required when actually applying changes
+    if (!isRoot() && !hasSudo()) {
+      console.log(chalk.red('[x] sudo access is required to run SecureForge.'));
+      process.exit(1);
+    }
   }
 
   // Distro
   const distro = opts.distro ?? await askDistro();
-  const validDistros = ['arch', 'debian', 'ubuntu', 'fedora', 'opensuse', 'rhel', 'centos', 'gentoo', 'alpine'];
   if (!validDistros.includes(distro)) {
     console.log(chalk.red(`[x] Unknown distro: ${distro}. Use: ${validDistros.join(', ')}`));
     process.exit(1);
   }
 
   const allModules = await loadModules(distro);
-
-  // --list flag
-  if (opts.list) {
-    console.log(chalk.bold('\nAvailable modules:\n'));
-    for (const m of allModules) {
-      const status = m.defaultEnabled ? chalk.green('on ') : chalk.dim('off');
-      console.log(`  [${status}] ${chalk.bold(m.id.padEnd(18))} ${chalk.dim(m.description)}`);
-    }
-    console.log();
-    process.exit(0);
-  }
 
   const role     = await askRole();
   const exposure = await askExposure();

@@ -94,13 +94,13 @@ WATCH_LIST=(
 alert "ProcGuard started. Watching ${watchList.length} process(es)."
 
 while true; do
-  for ENTRY in "${WATCH_LIST[@]}"; do
-    PROC_NAME="${ENTRY%%|*}"
-    SVC_NAME="${ENTRY##*|}"
+  for ENTRY in "\${WATCH_LIST[@]}"; do
+    PROC_NAME="\${ENTRY%%|*}"
+    SVC_NAME="\${ENTRY##*|}"
     COUNT_KEY="${PROC_NAME}"
 
     if ! pgrep -x "$PROC_NAME" &>/dev/null; then
-      RESTARTS="${RESTART_COUNTS[$COUNT_KEY]:-0}"
+      RESTARTS="\${RESTART_COUNTS[$COUNT_KEY]:-0}"
 
       if [[ $RESTARTS -lt ${maxRestarts} ]]; then
         alert "PROCESS DOWN: $PROC_NAME — attempting restart ($((RESTARTS+1))/${maxRestarts})"

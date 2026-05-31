@@ -55,7 +55,7 @@ HASH_FILE="/etc/secureforge/duress/hash"
 STORED=$(cat "$HASH_FILE")
 ENTERED=$(echo -n "$AUTHTOK" | sha512sum | awk '{print $1}')
 if [ "$STORED" = "$ENTERED" ]; then
-  SRC_IP=$(echo "${SSH_CLIENT:-local}" | awk '{print $1}')
+  SRC_IP=$(echo "\${SSH_CLIENT:-local}" | awk '{print $1}')
   ${logAccess ? `logger -t secureforge-duress "DURESS LOGIN: user=$PAM_USER src=$SRC_IP"` : ''}
   ${alertWebhook && webhookUrl ? `
   curl -s -X POST '${webhookUrl}' -H 'Content-Type: application/json' \

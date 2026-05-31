@@ -92,7 +92,7 @@ cat > /usr/local/bin/sf-duress-check << 'DURESS_SCRIPT'
 #!/usr/bin/env bash
 # Reads PAM_AUTHTOK from stdin via pam_exec expose_authtok
 AUTHTOK=$(cat /dev/stdin 2>/dev/null || echo "")
-REAL_USER="${PAM_USER:-}"
+REAL_USER="\${PAM_USER:-}"
 HASH_FILE="/etc/secureforge/duress/${REAL_USER}.hash"
 
 [ -z "$AUTHTOK" ] && exit 1
@@ -103,16 +103,16 @@ ENTERED=$(echo -n "$AUTHTOK" | sha512sum | awk '{print $1}')
 
 if [ "$STORED" = "$ENTERED" ]; then
   DECOY_USER="${decoyUser}"
-  SRC_IP=$(echo "${SSH_CLIENT:-unknown}" | awk '{print $1}')
+  SRC_IP=$(echo "\${SSH_CLIENT:-unknown}" | awk '{print $1}')
 
   ${logAccess ? `
-  logger -t secureforge-duress "DURESS LOGIN: user=$REAL_USER src=$SRC_IP tty=${PAM_TTY:-unknown}"
+  logger -t secureforge-duress "DURESS LOGIN: user=$REAL_USER src=$SRC_IP tty=\${PAM_TTY:-unknown}"
   ` : ''}
 
   ${alertWebhook && webhookUrl ? `
   curl -s -X POST '${webhookUrl}' \\
     -H 'Content-Type: application/json' \\
-    -d "{\\"event\\":\\"duress_login\\",\\"user\\":\\"$REAL_USER\\",\\"src_ip\\":\\"$SRC_IP\\",\\"tty\\":\\"${PAM_TTY:-unknown}\\"}" \\
+    -d "{\\"event\\":\\"duress_login\\",\\"user\\":\\"$REAL_USER\\",\\"src_ip\\":\\"$SRC_IP\\",\\"tty\\":\\"\${PAM_TTY:-unknown}\\"}" \\
     &>/dev/null &
   ` : ''}
 

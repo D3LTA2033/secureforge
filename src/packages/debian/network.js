@@ -100,7 +100,7 @@ ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ${ipv6 ? `
 GRUB_FILE=/etc/default/grub
 grep -q 'ipv6.disable' "$GRUB_FILE" || \
-  sed -i 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="\1 ipv6.disable=1"/' "$GRUB_FILE"
+  sed -i 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="\\1 ipv6.disable=1"/' "$GRUB_FILE"
 update-grub 2>/dev/null || true
 ` : ''}
 `;
